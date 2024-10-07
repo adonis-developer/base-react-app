@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --body-bg: #999999;
+}
+* {
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+body {
+  color: #222f3e;
+  margin: 0;
+  background-color: var(--body-bg);
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  /* height: 8px; */
+  background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 10px;
+  border: 2px solid #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #aaa;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f5f5f5;
+}
+@layer components {
+  .btn-default {
+    @apply border-none outline-none;
+  }
+  .btn-close-round {
+    @apply flex items-center justify-center w-[20px] h-[20px] border-[2px] border-gray-500 hover:border-red-500 hover:text-red-500 border-solid rounded-full;
+    @apply transition-all hover:scale-105;
+  }
+
+  .clip-path-polygon {
+    clip-path: polygon(93% 0, 100% 50%, 93% 100%, 0% 100%, 7% 49%, 0% 0%);
+  }
+}
+
+/* ANIMATION LIST */
+.face-in-up {
+  transition: all 0.5s linear;
+  animation: faceInUp 0.7s ease-in-out;
+}
+
+@keyframes faceInUp {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  /* 60% {
+    transform: translateY(-10%);
+    opacity: 1;
+  } */
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+/* END ANIMATION LIST */
